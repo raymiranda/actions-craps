@@ -1,0 +1,48 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Rolling Dice
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Default Job - Placeholder
+        uses: ./ # Uses an action in the root directory including rolling the dice
+        id: hello
+        with:
+          who-to-greet: 'Rdizzle'
+      # Roll the dice to create the artifact
+      - name: Roll The Dice
+        run: ./roll.sh
+
+      - name: Install Dependencies for Set up Python 3.8
+        uses: actions/setup-python@v2
+        with: 
+          python-version: '3.8'
+
+      - name: Check python version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Install Python Dependencies
+        run: | 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Update README file
+        run: python pymdgenerate.py
+
+      - name: Add updated files to repo
+        run: |
+          git add .
+          git config --global user.name "Ray Miranda"
+          git config --global user.email "rmira80@gmail.com"
+          git commit -m "Update README file with current Dice Roll/Settings"
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUBACTIONTOKEN }}
+
+          

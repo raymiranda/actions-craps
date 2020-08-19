@@ -1,0 +1,2 @@
+# minimal requirements
+mdutils==1.2.2
