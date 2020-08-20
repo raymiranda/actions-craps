@@ -18,7 +18,6 @@ jobs:
           who-to-greet: 'Rdizzle'
       # Roll the dice to create the artifact
       - name: Roll The Dice
-        if: startsWith(github.event.issue.title, 'Roll Some Dice') == 'true'
         run: ./roll.sh
 
       - name: Install Dependencies for Set up Python 3.8
@@ -27,7 +26,6 @@ jobs:
           python-version: '3.8'
 
       - name: Install Python Dependencies
-        if: startsWith(github.event.issue.title, 'Roll Some Dice') == 'true'
         run: | 
           python -c "import sys; print(sys.version)"
           python -m pip install --upgrade pip
