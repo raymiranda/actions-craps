@@ -11,6 +11,7 @@ Contents
 	* [Come Out Roll](#come-out-roll)
 	* [Second Roll and Forward](#second-roll-and-forward)
 * [Current Dice Game](#current-dice-game)
+	* [Need a new shooter!](#need-a-new-shooter)
 
 # Overview
 
@@ -82,3 +83,9 @@ Yes, I know... easier said than done.
 The odds are stacked against you since ``7`` is the highest probability to roll with 6 and 8 following.  
 Hit the established point and you win! Roll a 7 and its game over.
 # Current Dice Game
+
+
+We have a winner!!
+## Need a new shooter!
+  
+[--> We need a new shooter! <--](https://github.com/raymiranda/actions-craps/issues/new?title=Let%27s%20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)

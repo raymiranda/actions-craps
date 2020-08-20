@@ -9,6 +9,7 @@
 
 from mdutils.mdutils import MdUtils
 from mdutils import Html
+import os, re, csv
 
 mdFile = MdUtils(file_name='README', title='Let\'s Roll Some Dice!')
 
@@ -70,6 +71,48 @@ mdFile.new_paragraph("The odds are stacked against you since ``7`` is the highes
 
 mdFile.new_header(level=1, title="Current Dice Game")
 
+
+with open('dice.log', 'r') as csvfile:
+    reader = csv.reader(csvfile, delimiter='\n')
+    rows = list(reader)
+    if len(rows) > 2: 
+        last_line = ' '.join(rows[-1])
+        last_saying = ' '.join(rows[-3]) + ' '+ ' '.join(rows[-2])
+    elif len(rows) == 2: 
+        last_line = ' '.join(rows[-1])
+        last_saying = ' '.join(rows[-2])
+
+    else: 
+        # last shot was a craps or winner.
+        last_saying = ' '.join(rows[-1])
+
+if os.stat("diceroll.txt").st_size == 0: 
+    mdFile.new_paragraph(last_saying)
+    # Get the current dice roll.
+    mdFile.new_header(level=2, title="Need a new shooter!")
+    link = "https://github.com/raymiranda/actions-craps/issues/new?title=Let%27s%20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
+    text = "--> We need a new shooter! <--"
+    mdFile.new_line(mdFile.new_inline_link(link=link, text=text))
+else: 
+    d = last_line.strip().replace(" ", "").split("|")
+    point = d[2]
+    dice = d[1].split(",")
+    dice1 = './images/'+str(dice[0])+'.png'
+    dice2 = './images/'+str(dice[1])+'.png'
+    last_roll = re.sub("[^0-9]", "", d[0])
+
+    if "lets try to hit that" in last_saying:
+        mdFile.new_header(level=2, title="The point is now " + str(last_roll) +"! Let's go shooter!")
+    else: 
+        mdFile.new_header(level=2, title="Last roll was a " + str(last_roll) +"! The point is "+str(point))
+    
+
+    mdFile.new_line(mdFile.new_inline_image(text='Dice 1', path=dice1))
+    mdFile.new_line(mdFile.new_inline_image(text='Dice 2', path=dice2))
+
+    link = "https://github.com/raymiranda/actions-craps/issues/new?title=Let%27s%20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
+    text = "--> The Dice Are Hot - Keep It Going! <-- "
+    mdFile.new_line(mdFile.new_inline_link(link=link, text=text))
 
 # Create a table of contents
 mdFile.new_table_of_contents(table_title='Contents', depth=2)

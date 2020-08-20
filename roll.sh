@@ -25,13 +25,11 @@ CRAPPERS=(2,3,12)
 
 HARDWAYS=(2,4,6,8,10)
 
-echo "DICE(1) is $DICE1 and DICE(2) is $DICE2 for a total of $TOTAL" >> $LOG
-
 if [ -z "$LASTROLL" ]; then
-    #First Roll Goodies
-
+    #First Roll Goodies - Fix
+    echo -n "" > $LOG 
     if [[ "${CRAPPERS[@]}" =~ "${TOTAL}" ]]; then
-        
+        echo -n "" > $LOG
         if [[ $TOTAL == 3 ]]; then
             echo "3 crap, son of a yo!" >> $LOG
         elif [[ $TOTAL == 12 ]]; then
@@ -41,12 +39,16 @@ if [ -z "$LASTROLL" ]; then
         fi
 
     elif [[ "${WINNERS[@]}" =~ "${TOTAL}" ]]; then 
+        echo -n "" > $LOG
         echo "Winner Winner - Pay the roller!!!" >> $LOG
     else
         echo $TOTAL >> $DICE
+        echo "Ok, lets try to hit that $TOTAL" >> $LOG
+        echo "Total: $TOTAL | $DICE1,$DICE2 | $TOTAL" >> $LOG
     fi
 
 elif [[ $TOTAL == $LASTROLL ]]; then
+    echo -n "" > $LOG
     echo "We have a winner!!" >> $LOG
     echo -n "" > $DICE
 
@@ -72,13 +74,18 @@ elif [[ $LASTROLL > 0 && $TOTAL != "7"  ]]; then
     fi
         if [ -z ${POINT} ]; then 
             echo "Nice $TOTAL! Let's keep the dice hot and hit that $TOTAL" >> $LOG
+            # no point established just yet
+            echo "Total: $TOTAL | $DICE1,$DICE2 | $TOTAL" >> $LOG
         else 
             echo "Nice $TOTAL! Let's keep the dice hot and hit that $POINT!" >> $LOG
+            echo "Total: $TOTAL | $DICE1,$DICE2 | $POINT" >> $LOG
         fi
+
 else
-    # we have crapped out.
+    # Crapped Out. Clean the logs for 1 entry.
+    echo -n "" > $LOG
     echo "Seven out, cinco dos, adios! Thanks for the bets and don't forget to tip your dealers!" >> $LOG
-    # clear the dice.
+    # clean the logs
     echo -n "" > $DICE
 fi
 
