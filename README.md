@@ -88,4 +88,4 @@ Hit the established point and you win! Roll a 7 and its game over.
 We have a winner!!
 ## Need a new shooter!
   
-[--> We need a new shooter! <--](https://github.com/raymiranda/actions-craps/issues/new?title=20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
+[--> We need a new shooter! <--](https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
