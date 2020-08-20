@@ -90,7 +90,7 @@ if os.stat("diceroll.txt").st_size == 0:
     mdFile.new_paragraph(last_saying)
     # Get the current dice roll.
     mdFile.new_header(level=2, title="Need a new shooter!")
-    link = "https://github.com/raymiranda/actions-craps/issues/new?title=Let%27s%20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
+    link = "https://github.com/raymiranda/actions-craps/issues/new?title=20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
     text = "--> We need a new shooter! <--"
     mdFile.new_line(mdFile.new_inline_link(link=link, text=text))
 else: 
@@ -113,6 +113,7 @@ else:
     link = "https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
     text = "--> The Dice Are Hot - Keep It Going! <-- "
     mdFile.new_line(mdFile.new_inline_link(link=link, text=text))
+
 
 # Create a table of contents
 mdFile.new_table_of_contents(table_title='Contents', depth=2)
