@@ -46,8 +46,8 @@ jobs:
       - name: Close Issue
         uses: peter-evans/close-issue@v1
         with:
-          github_token: ${{ secrets.GITHUBACTIONTOKEN }}
-          issue-number: github.event.issue.id
+          token: ${{ secrets.GITHUBACTIONTOKEN }}
+          issue-number: github.event.issue.number
           comment: Auto-closing issue
           #eventually we'll add the actual roll to the comments.
           
