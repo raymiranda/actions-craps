@@ -16,7 +16,7 @@ mdFile = MdUtils(file_name='README', title='Let\'s Roll Some Dice!')
 # Testing string format.
 string = """
 The goal was to create simple example using Github Actions but, somehow that morphed into playing a game of Craps. \n
-I've leanred that creating something `fun` will help you to retain all the learning steps taken to develop something. \n
+I've learned that creating something `fun` will help you to retain all the learning steps taken to develop something. \n
 During the workflow, we will use a simple bash script to simulate the `roll` and log the output to a text file.\n
 That text file will then be stored in the repository and parsed to display at the bottom of this README file. \n
 I wanted to demonstrate how utilizing `MdUtils` will make writing Markdown files extremely easy. \n
@@ -24,8 +24,8 @@ I wanted to demonstrate how utilizing `MdUtils` will make writing Markdown files
 What I tested during this process: \n
 - Saving diceroll.txt to an artifact. \n
 - Saving diceroll.txt as a cache/key. \n
-- Establihing a lambda call utilizing an AWS API Gateway. \n
-In the end, I chose to save the file in the respository to allow anyone to pick up the dice as the shooter. \n.
+- Establishing a lambda call utilizing an AWS API Gateway. \n
+In the end, I chose to save the file in the repository to allow anyone to pick up the dice as the shooter. \n.
 I'll expand more in my blog but for now, let's start rolling! \n
 New Shooooooooooooooooooootaaaaa!!"
 """
@@ -51,8 +51,8 @@ mdFile.insert_code("First Roll: \n"
                    "Note: On a craps roll, you would have won if you bet on the ``Don\'t Pass`` line, but that's risky. \n"
                    "4, 5, 6, 8, 9, 10 = Establish the point on the first roll and the game continues. \n"
                    "\n"
-                   "Note... note...: Some people are very supersticious when it comes to Craps so beware if you start to bet `against` the table, although I've seen some rollers do very well. \n"
-                   "At the end of the day, its your $$, so you choose your own destiny. \n"
+                   "Note... note...: Some people are very superstitious when it comes to Craps so beware if you start to bet `against` the table, although I've seen some rollers do very well. \n"
+                   "At the end of the day, it's your $$, so you choose your own destiny. \n"
                    "Note... note... note...: Always Tip your dealers. They help you understand the game better and are extremely patient as you learn the game!"
                    , language='php')
 
