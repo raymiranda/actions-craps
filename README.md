@@ -11,7 +11,7 @@ Contents
 	* [Come Out Roll](#come-out-roll)
 	* [Second Roll and Forward](#second-roll-and-forward)
 * [Current Dice Game](#current-dice-game)
-	* [Last roll was a 4! The point is 10](#last-roll-was-a-4-the-point-is-10)
+	* [Need a new shooter!](#need-a-new-shooter)
 
 # Overview
 
@@ -19,7 +19,7 @@ Contents
 
 The goal was to create simple example using Github Actions but, somehow that morphed into playing a game of Craps. 
 
-I've leanred that creating something `fun` will help you to retain all the learning steps taken to develop something. 
+I've learned that creating something `fun` will help you to retain all the learning steps taken to develop something. 
 
 During the workflow, we will use a simple bash script to simulate the `roll` and log the output to a text file.
 
@@ -34,9 +34,9 @@ What I tested during this process:
 
 - Saving diceroll.txt as a cache/key. 
 
-- Establihing a lambda call utilizing an AWS API Gateway. 
+- Establishing a lambda call utilizing an AWS API Gateway. 
 
-In the end, I chose to save the file in the respository to allow anyone to pick up the dice as the shooter. 
+In the end, I chose to save the file in the repository to allow anyone to pick up the dice as the shooter. 
 .
 I'll expand more in my blog but for now, let's start rolling! 
 
@@ -63,8 +63,8 @@ First Roll:
 Note: On a craps roll, you would have won if you bet on the ``Don't Pass`` line, but that's risky. 
 4, 5, 6, 8, 9, 10 = Establish the point on the first roll and the game continues. 
 
-Note... note...: Some people are very supersticious when it comes to Craps so beware if you start to bet `against` the table, although I've seen some rollers do very well. 
-At the end of the day, its your $$, so you choose your own destiny. 
+Note... note...: Some people are very superstitious when it comes to Craps so beware if you start to bet `against` the table, although I've seen some rollers do very well. 
+At the end of the day, it's your $$, so you choose your own destiny. 
 Note... note... note...: Always Tip your dealers. They help you understand the game better and are extremely patient as you learn the game!
 ```
 ## Second Roll and Forward
@@ -84,8 +84,8 @@ The odds are stacked against you since ``7`` is the highest probability to roll 
 Hit the established point and you win! Roll a 7 and its game over.
 # Current Dice Game
 
-## Last roll was a 4! The point is 10
+
+Seven out, cinco dos, adios! Thanks for the bets and don't forget to tip your dealers!
+## Need a new shooter!
   
-![Dice 1](./images/1.png)  
-![Dice 2](./images/3.png)  
-[--> The Dice Are Hot - Keep It Going! <-- ](https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
+[--> We need a new shooter! <--](https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
