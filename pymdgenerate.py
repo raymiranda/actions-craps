@@ -110,7 +110,7 @@ else:
     mdFile.new_line(mdFile.new_inline_image(text='Dice 1', path=dice1))
     mdFile.new_line(mdFile.new_inline_image(text='Dice 2', path=dice2))
 
-    link = "https://github.com/raymiranda/actions-craps/issues/new?title=Let%27s%20Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
+    link = "https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments"
     text = "--> The Dice Are Hot - Keep It Going! <-- "
     mdFile.new_line(mdFile.new_inline_link(link=link, text=text))
 

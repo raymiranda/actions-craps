@@ -1,4 +1,6 @@
-on: [push]
+on:
+  issues:
+    types: [created]
 
 jobs:
   hello_world_job:
@@ -16,6 +18,7 @@ jobs:
           who-to-greet: 'Rdizzle'
       # Roll the dice to create the artifact
       - name: Roll The Dice
+        if: startsWith(github.event.issue.title, 'Roll Some Dice') == 'true'
         run: ./roll.sh
 
       - name: Install Dependencies for Set up Python 3.8
@@ -23,16 +26,13 @@ jobs:
         with: 
           python-version: '3.8'
 
-      - name: Check python version
-        run: python -c "import sys; print(sys.version)"
-
       - name: Install Python Dependencies
+        if: startsWith(github.event.issue.title, 'Roll Some Dice') == 'true'
         run: | 
+          python -c "import sys; print(sys.version)"
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Update README file
-        run: python pymdgenerate.py
+          python pymdgenerate.py
 
       - name: Add updated files to repo
         run: |
@@ -45,4 +45,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUBACTIONTOKEN }}
 
+      - name: Close Issue
+        uses: peter-evans/close-issue@v1
+        with:
+          github_token: ${{ secrets.GITHUBACTIONTOKEN }}
+          issue-number: github.event.issue.id
+          comment: Auto-closing issue
+          #eventually we'll add the actual roll to the comments.
           
