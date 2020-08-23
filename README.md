@@ -11,7 +11,7 @@ Contents
 	* [Come Out Roll](#come-out-roll)
 	* [Second Roll and Forward](#second-roll-and-forward)
 * [Current Dice Game](#current-dice-game)
-	* [The point is now 6! Let's go shooter!](#the-point-is-now-6-lets-go-shooter)
+	* [Need a new shooter!](#need-a-new-shooter)
 
 # Overview
 
@@ -84,8 +84,8 @@ The odds are stacked against you since ``7`` is the highest probability to roll 
 Hit the established point and you win! Roll a 7 and its game over.
 # Current Dice Game
 
-## The point is now 6! Let's go shooter!
+
+Seven out, cinco dos, adios! Thanks for the bets and don't forget to tip your dealers!
+## Need a new shooter!
   
-![Dice 1](./images/3.png)  
-![Dice 2](./images/3.png)  
-[--> The Dice Are Hot - Keep It Going! <-- ](https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
+[--> We need a new shooter! <--](https://github.com/raymiranda/actions-craps/issues/new?title=Roll%20Some%20Dice&body=https://api.github.com/repos/raymiranda/action-craps/issues?title=Let%27s%20Roll%20Some%20Dice&body=Add%20your%20own%20comments)
